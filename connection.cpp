@@ -1,5 +1,9 @@
 #include "connection.hpp"
 
+/**
+ * @brief Class connection::connection method section
+ */
+
 connection::connection()
 {
 
@@ -39,6 +43,10 @@ void connection::setPort()
 {
 
 }
+
+/**
+ * @brief Class maestro::mamethod estro section
+ */
 
 maestro::maestro()
 {
@@ -94,27 +102,56 @@ void maestro::checkNodeStatus()
 
 }
 
+/**
+ * @brief Class node::node method section
+ */
+
 node::node()
 {
 
 }
+
 node::~node()
 {
 
 }
+
 void node::findMaestroServer()
 {
 
 }
+
 void node::joinCluster()
 {
 
 }
+
 void node::leaveCluster()
 {
 
 }
+
 void node::queryHardware()
+{
+
+}
+
+void node::querySystemInfo()
+{
+
+}
+
+void node::queryHardware()
+{
+
+}
+
+void node::queryLoad()
+{
+
+}
+
+void node::executeCommand()
 {
 
 }

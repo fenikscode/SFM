@@ -1,8 +1,11 @@
 #pragma once
 
-#include <iostream>
-#include <sys/socket.h>
-#include <netinet/in.h>
+#include    <iostream>
+#include    <vector>
+#include    <sys/socket.h>
+#include    <netinet/in.h>
+
+#include    "dataset.hpp"
 
 class connection
 {
@@ -63,8 +66,20 @@ class maestro : public connection
 class node : public connection
 {
     private:
-        int             nodeID;
-        std::string     nodeName;
+        int                     nodeID;
+        std::string             nodeName;
+
+        std::string             machineName;
+        std::string             osName;
+        std::string             addressIP;
+
+        status                  currentStatus;
+        role                    currentRole;
+
+        cpu                     cpuInfo;
+        memory                  memoryInfo;
+        std::vector<storage>    storageSet;
+        std::vector<interface>  interfaceSet;
 
     public:
         node();
@@ -74,6 +89,10 @@ class node : public connection
         void joinCluster();
         void leaveCluster();
 
+        void querySystemInfo();
         void queryHardware();
-        
+        void queryLoad();
+
+        void executeCommand();      
+
 };
